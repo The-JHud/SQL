@@ -22,3 +22,4 @@ SELECT variation_of_clothing, dollar_price, items_sold
 FROM clothes
 ORDER BY items_sold 
 DESC LIMIT 3
+
