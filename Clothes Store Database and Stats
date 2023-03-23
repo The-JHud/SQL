@@ -2,13 +2,23 @@
 
 CREATE TABLE clothes (id INTEGER PRIMARY KEY, variation_of_clothing TEXT, items_sold INTEGER, dollar_price INTEGER);
 
-INSERT INTO clothes VALUES (1, "Hoodies", 5, 50);
-INSERT INTO clothes VALUES(2, "Long Shirts", 5, 25);
-INSERT INTO clothes VALUES(3, "T Shirts", 5, 15);
+INSERT INTO clothes VALUES (1, "Hoodies", 3, 50);
+INSERT INTO clothes VALUES(2, "Long Shirts", 4, 25);
+INSERT INTO clothes VALUES(3, "T Shirts", 6, 15);
 INSERT INTO clothes VALUES(4, "Shorts", 5, 15);
-INSERT INTO clothes VALUES(5, "Sweatpants", 5, 60);
-INSERT INTO clothes VALUES(6, "Jeans ", 5, 50);
+INSERT INTO clothes VALUES(5, "Sweatpants", 1, 60);
+INSERT INTO clothes VALUES(6, "Jeans ", 2, 50);
 
-SELECT * FROM clothes ORDER BY dollar_price;
+--display the database ordered by price.
+SELECT * FROM clothes 
+ORDER BY dollar_price;
 
-SELECT SUM(items_sold) FROM clothes;
+--display how many variations of clothes were sold
+SELECT SUM(items_sold) 
+FROM clothes;
+
+--display top 3 items sold
+SELECT variation_of_clothing, dollar_price, items_sold
+FROM clothes
+ORDER BY items_sold 
+DESC LIMIT 3
